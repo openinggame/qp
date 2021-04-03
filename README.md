@@ -20,7 +20,7 @@
 
 #### Telegram群组:
 
-​    https://t.me/joinchat/Ptl66CwP5WxkODZl
+![https://t.me/joinchat/Ptl66CwP5WxkODZl](https://github.com/openinggame/qp/blob/master/GameScreenshot/tg.jpg)  
 
 由于大家都知道的原因，国内可能无法打开并使用Telegram，所以打不开是因为你不会科学上网。
 
