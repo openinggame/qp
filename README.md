@@ -22,7 +22,7 @@
 
 ![](https://github.com/openinggame/qp/blob/master/GameScreenshot/tg.jpg) 
 
-​       入群链接: https://t.me/joinchat/Ptl66CwP5WxkODZl
+​       入群链接: https://t.me/openinggame
 
 由于大家都知道的原因，国内可能无法打开并使用Telegram，所以打不开是因为你不会科学上网。
 
@@ -233,4 +233,4 @@ data
 
 #### Telegram群组:
 
-​   入群链接: https://t.me/joinchat/Ptl66CwP5WxkODZl
+​   入群链接: https://t.me/openinggame
