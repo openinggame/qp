@@ -30,6 +30,10 @@
 
 ​    游戏服务集群运行环境：Centos7.x + docker + docker-compose
 
+![](https://github.com/openinggame/qp/blob/master/GameScreenshot/occupy.jpg)
+
+​        游戏服务资源占用情况
+
 ### 1. 环境安装
 
 #### 1.1 安装docker(centos7.x)
