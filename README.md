@@ -2,9 +2,9 @@
 
  **发布此版本的初衷:**
 
-朋友聚会打个牌玩个麻将什么的，现在的游戏平台都要充值才能玩，而且还需要下载app、安装和注册，很麻烦。。。不能尽兴玩耍。
+朋友聚会打个牌玩个麻将什么的，现在的游戏平台都要充值才能玩，而且还需要下载app、安装和注册，很麻烦......不能尽兴娱乐。
 
-所以，整合了一套稳定的商用 **H5网页版** 游戏分享给需要的玩家，让玩家摆脱平台的束缚，无监控、无控制、公平公正，支持手机、电脑、Pad，只要有浏览器就可以玩。游戏服务端使用golang开发，采用微服务架构，支持高并发场景需求，使用容器进行封装，简化了复杂的配置过程，小白按照下面的搭建教程也能轻松在几分钟内搭建好平台。
+所以，整合了一套稳定的商用 **H5网页版** 游戏分享出来，让大家摆脱平台的束缚，无监控、无控制、公平公正，支持手机、电脑、Pad，只要有浏览器就可以玩。游戏服务端使用golang开发，采用微服务架构，支持高并发场景需求，使用容器进行封装，简化了复杂的配置过程，小白按照下面的搭建教程也能轻松在几分钟内搭建好平台。
 
 ![](https://github.com/openinggame/qp/blob/master/GameScreenshot/1.jpg)
 ![](https://github.com/openinggame/qp/blob/master/GameScreenshot/5.jpg)
@@ -22,7 +22,7 @@
 
 ![](https://github.com/openinggame/qp/blob/master/GameScreenshot/tg.jpg) 
 
-​       邀请链接: https://t.me/joinchat/Ptl66CwP5WxkODZl
+​       入群链接: https://t.me/joinchat/Ptl66CwP5WxkODZl
 
 由于大家都知道的原因，国内可能无法打开并使用Telegram，所以打不开是因为你不会科学上网。
 
@@ -233,4 +233,4 @@ data
 
 #### Telegram群组:
 
-​    https://t.me/joinchat/Ptl66CwP5WxkODZl
+​   入群链接: https://t.me/joinchat/Ptl66CwP5WxkODZl
