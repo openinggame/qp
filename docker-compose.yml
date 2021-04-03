@@ -1,0 +1,134 @@
+version: "3.0"
+
+services:
+  web:
+    container_name: web0
+    image: openinggame/web:v1
+    ports:
+      - "80:80"
+    environment:
+      - API_HOST=<ip address>
+    networks:
+      - game
+    depends_on:
+      - server
+  server:
+    container_name: server0
+    image: openinggame/server:v1
+    ports:
+      - "81:81"
+    networks:
+      - game
+    depends_on:
+      - etcd
+      - kafka
+      - redis1
+      - mysql
+      - mongodb
+  mysql:
+    image: mysql:8.0.23
+    container_name: mysql0
+    command:
+      --default-authentication-plugin=mysql_native_password
+      --character-set-server=utf8mb4
+      --collation-server=utf8mb4_general_ci
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+    volumes:
+      - /data/mysql:/var/lib/mysql
+      - mysqlconf:/etc/mysql/conf.d
+    networks:
+      - game
+  redis0:
+    container_name: redis0
+    image: redis:latest
+    volumes:
+      - redisdata0:/data
+    command: redis-server --requirepass 123456
+    networks:
+      - game
+    depends_on:
+      - etcd
+  redis1:
+    container_name: redis1
+    image: redis:latest
+    volumes:
+      - redisdata1:/data
+    command: redis-server --requirepass 123456
+    networks:
+      - game
+    depends_on:
+      - etcd
+  redis2:
+    container_name: redis2
+    image: redis:latest
+    volumes:
+      - redisdata2:/data
+    command: redis-server --requirepass 123456
+    networks:
+      - game
+    depends_on:
+      - mysql
+      - etcd
+      - redis1
+  zookeeper:
+    container_name: zookeeper
+    image: wurstmeister/zookeeper
+    restart: always
+    networks:
+      - game
+  kafka:
+    container_name: kafka0
+    image: wurstmeister/kafka:2.12-2.3.0
+    environment:
+      - KAFKA_BROKER_ID=0
+      - KAFKA_ZOOKEEPER_CONNECT=zookeeper:2181
+      - KAFKA_ADVERTISED_LISTENERS=PLAINTEXT://kafka0:9092
+      - KAFKA_LISTENERS=PLAINTEXT://0.0.0.0:9092
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    restart: always
+    depends_on:
+      - zookeeper
+    networks:
+      - game
+  etcd:
+    image: quay.io/coreos/etcd:v3.2.32
+    container_name: etcd0
+    environment:
+      ETCDCTL_API: 3
+    command:
+      - etcd
+      - --name=etcd0
+      - --data-dir=/data/etcd-data
+      - --advertise-client-urls=http://etcd0:2379
+      - --listen-client-urls=http://0.0.0.0:2379
+    restart: always
+    volumes:
+      - etcd0_data:/etcd-data
+    networks:
+      - game
+  mongodb:
+    container_name: mongodb0
+    image: mongo:4.4.4
+    restart: always
+    volumes:
+      - /data/mongo_data:/data/db
+      - mongodb_logs:/data/logs
+    command: --auth
+    networks:
+      - game
+    depends_on:
+      - etcd
+volumes:
+  mysqlconf:
+  mongodb_logs:
+  etcd0_data:
+  redisdata0:
+  redisdata1:
+  redisdata2:
+networks:
+  game:
+    external:
+      true
